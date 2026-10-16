@@ -5,6 +5,27 @@
   "homepage": "https://github.com/Kyle-Hosman/az-mods-examples",
   "mods": [
     {
+      "id": "deck-overview",
+      "name": "Deck Overview",
+      "version": "1.0.0",
+      "author": "Kyle-Hosman",
+      "summary": "Every deck on one page: loaded or not, BPM, file name, and the BPM difference to a reference deck you pick.",
+      "icon": "https://github.com/Kyle-Hosman/az-mods-examples/releases/download/deck-overview-1.0.0/deck-overview-1.0.0-icon.png",
+      "package": "https://github.com/Kyle-Hosman/az-mods-examples/releases/download/deck-overview-1.0.0/deck-overview-1.0.0.azmod",
+      "sha256": "7049d70c7d5adbc8d1fa52f15d43d02e44ae9757fb980b6f02c34c682fd6cb39",
+      "size": 56751,
+      "firmware": [
+        "any"
+      ],
+      "hooks": false,
+      "source": "https://github.com/Kyle-Hosman/az-mods-examples/tree/main/deck-overview",
+      "updated": "2026-10-16",
+      "category": "tools",
+      "license": "GPL-3.0-only",
+      "min_core": "1.2.3",
+      "description": "Adds a page under Mod Menu > Community Mods > Installed > Deck Overview listing each deck in the current view (2 or 4): whether a track is loaded, its BPM, and its file name.\n\nPick a reference deck with the browse knob or a tap, and every other deck shows how far its BPM is from it, in BPM and in percent. Anything the deck does not report is shown as \"--\", never guessed.\n\nIt only reads deck state through the AZ-MODS core. It does not patch the deck's code, change any control, LED or audio, write files of its own, or use the network."
+    },
+    {
       "id": "set-clock",
       "name": "Set Clock",
       "version": "1.0.0",
