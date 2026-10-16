@@ -3,5 +3,27 @@
   "name": "AZ-MODS examples",
   "maintainer": "Kyle-Hosman",
   "homepage": "https://github.com/Kyle-Hosman/az-mods-examples",
-  "mods": []
+  "mods": [
+    {
+      "id": "set-clock",
+      "name": "Set Clock",
+      "version": "1.0.0",
+      "author": "Kyle-Hosman",
+      "summary": "The time of day and how long your set has been running, large and readable, on its own Mod Menu page.",
+      "icon": "https://github.com/Kyle-Hosman/az-mods-examples/releases/download/set-clock-1.0.0/set-clock-1.0.0-icon.png",
+      "package": "https://github.com/Kyle-Hosman/az-mods-examples/releases/download/set-clock-1.0.0/set-clock-1.0.0.azmod",
+      "sha256": "394688e5c97876a5c3e64adffef968dcc427c76eeb8517e01d161439c3635771",
+      "size": 60033,
+      "firmware": [
+        "any"
+      ],
+      "hooks": false,
+      "source": "https://github.com/Kyle-Hosman/az-mods-examples/tree/main/set-clock",
+      "updated": "2026-10-16",
+      "category": "tools",
+      "license": "GPL-3.0-only",
+      "min_core": "1.2.3",
+      "description": "A page under Mod Menu > Community Mods > Installed > Set Clock: the time of day and the time since the set started, in big digits.\n\nThe set starts when a deck first has a track loaded and carries on through a reload; reset it from the page (press twice).\n\nThe deck's clock is UTC, so the page has a time zone setting in 15 minute steps (daylight saving is not applied), and a 12- or 24-hour clock.\n\nIt reads only the clock and whether a track is loaded: no hooks, controls, LEDs, audio, files or network."
+    }
+  ]
 }
