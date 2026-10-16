@@ -1,0 +1,18 @@
+{
+  "azmod": 1,
+  "id": "deck-events",
+  "name": "Deck Events",
+  "version": "1.0.0",
+  "author": "Kyle-Hosman",
+  "summary": "Shows a banner when a deck loads a track, and optionally when it starts or stops, with the beats it played.",
+  "description": "Shows the deck's own caution box when a deck loads a track: the deck, the title, the artist and the tempo. Anything the deck does not report is left out, never guessed.\n\nEject a deck and it asks whether to also show a banner each time a deck starts or stops. A stop banner says how many beats the deck played, counted from its beat grid.\n\nIt is an example for mod authors. It does not patch the deck's code, change any control, LED or audio, write files, or use the network.",
+  "category": "tools",
+  "license": "GPL-3.0-only",
+  "source": "https://github.com/Kyle-Hosman/az-mods-examples/tree/main/deck-events",
+  "api": 1,
+  "firmware": [
+    "any"
+  ],
+  "hooks": false,
+  "min_core": "1.2.3"
+}

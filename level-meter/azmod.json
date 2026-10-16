@@ -1,0 +1,18 @@
+{
+  "azmod": 1,
+  "id": "level-meter",
+  "name": "Level Meter",
+  "version": "1.0.0",
+  "author": "Kyle-Hosman",
+  "summary": "A level meter for each deck on a Mod Menu page: RMS as a bar, the peak as a marker that holds, and the peak in dBFS.",
+  "description": "Adds a page under Mod Menu > Community Mods > Installed > Level Meter with one meter per deck in the current view (2 or 4).\n\nThe XDJ-AZ mixes its channels in hardware, so the meter shows each deck's own output before the mixer: the channel fader, EQ and crossfader do not move it. A peak at or above -1 dBFS is shown in red.\n\nIt is an example for mod authors. It listens to the decks read-only through the AZ-MODS core's audio taps, which never delay the audio. It does not patch the deck's code, change any control, LED or audio, write files, or use the network.",
+  "category": "tools",
+  "license": "GPL-3.0-only",
+  "source": "https://github.com/Kyle-Hosman/az-mods-examples/tree/main/level-meter",
+  "api": 1,
+  "firmware": [
+    "any"
+  ],
+  "hooks": false,
+  "min_core": "1.2.3"
+}

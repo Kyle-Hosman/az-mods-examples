@@ -1,0 +1,18 @@
+{
+  "azmod": 1,
+  "id": "deck-overview",
+  "name": "Deck Overview",
+  "version": "1.0.0",
+  "author": "Kyle-Hosman",
+  "summary": "Every deck on one page: loaded or not, BPM, file name, and the BPM difference to a reference deck you pick.",
+  "description": "Adds a page under Mod Menu > Community Mods > Installed > Deck Overview listing each deck in the current view (2 or 4): whether a track is loaded, its BPM, and its file name.\n\nPick a reference deck with the browse knob or a tap, and every other deck shows how far its BPM is from it, in BPM and in percent. Anything the deck does not report is shown as \"--\", never guessed.\n\nIt only reads deck state through the AZ-MODS core. It does not patch the deck's code, change any control, LED or audio, write files of its own, or use the network.",
+  "category": "tools",
+  "license": "GPL-3.0-only",
+  "source": "https://github.com/Kyle-Hosman/az-mods-examples/tree/main/deck-overview",
+  "api": 1,
+  "firmware": [
+    "any"
+  ],
+  "hooks": false,
+  "min_core": "1.2.3"
+}

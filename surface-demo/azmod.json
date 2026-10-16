@@ -1,0 +1,18 @@
+{
+  "azmod": 1,
+  "id": "surface-demo",
+  "name": "Surface Demo",
+  "version": "1.0.0",
+  "author": "Kyle-Hosman",
+  "summary": "An example of the drawing services: a panel on the deck screen that answers taps, a long press and the browse knob.",
+  "description": "Shows a small panel at the top of the deck screen, drawn by the mod: a title, the screen the deck is on, a line, an image and the last thing you did.\n\nTap it to change its accent color. Hold it to give it the browse knob: turning the knob then moves a counter, and BACK hands the knob back to the deck.\n\nIt is an example for mod authors. It does not patch the deck's code, change any control, LED or audio, write files, or use the network.",
+  "category": "tools",
+  "license": "GPL-3.0-only",
+  "source": "https://github.com/Kyle-Hosman/az-mods-examples/tree/main/surface-demo",
+  "api": 1,
+  "firmware": [
+    "any"
+  ],
+  "hooks": false,
+  "min_core": "1.2.3"
+}

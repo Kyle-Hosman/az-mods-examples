@@ -1,0 +1,57 @@
+name: sanitizers
+
+# The az-mods-sdk test harness (its tools/harness) on every example mod, built with clang
+# in three passes: plain, AddressSanitizer + UndefinedBehaviorSanitizer, and
+# ThreadSanitizer. Each pass also runs the harness's planted bugs, which must be reported;
+# tests/sanitize.sh fails if one is not caught.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  SDK_REPO: "Kyle-Hosman/az-mods-sdk"
+  SDK_REF: "v1.2.3"   # the SDK the examples are built and tested against
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: clang-format, the version .clang-format names
+        run: |
+          pip install clang-format==21.1.8
+          git ls-files '*.c' '*.cpp' | xargs clang-format --dry-run --Werror
+
+  sanitize:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        pass: [plain, asan, tsan]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.SDK_REPO }}
+          ref: ${{ env.SDK_REF }}
+          path: .azmod-sdk
+
+      - name: Address space layout ThreadSanitizer supports
+        # ThreadSanitizer aborts at start with the runner's default 32 random mmap bits
+        run: sudo sysctl -w vm.mmap_rnd_bits=28
+
+      - name: Harness, ${{ matrix.pass }}
+        env:
+          CC: clang
+        run: |
+          clang --version
+          sh tests/sanitize.sh --sdk .azmod-sdk ${{ matrix.pass }} | tee harness.log
+          case ${{ matrix.pass }} in plain) want=9 ;; asan) want=3 ;; tsan) want=1 ;; esac
+          got=$(grep -c '^control .*: caught' harness.log || true)
+          echo "controls caught: $got of $want"
+          [ "$got" = "$want" ]

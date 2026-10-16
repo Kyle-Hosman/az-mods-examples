@@ -1,0 +1,18 @@
+{
+  "azmod": 1,
+  "id": "library-browser",
+  "name": "Library Browser",
+  "version": "1.0.0",
+  "author": "Kyle-Hosman",
+  "summary": "Browse the rekordbox playlists on the USBs from a Mod Menu page, and open one to see its tracks.",
+  "description": "Adds a page under Mod Menu > Community Mods > Installed > Library Browser listing the playlists and folders of the rekordbox library on each USB in the deck.\n\nTurn the browse knob to move, click a playlist to see its tracks with artist, BPM and key, and press BACK to return to the list.\n\nIt is an example for mod authors. It reads the library read-only through the AZ-MODS core, on a thread of its own so the deck's screen never waits for the USB. It does not patch the deck's code, change any control, LED or audio, write files, or use the network.",
+  "category": "tools",
+  "license": "GPL-3.0-only",
+  "source": "https://github.com/Kyle-Hosman/az-mods-examples/tree/main/library-browser",
+  "api": 1,
+  "firmware": [
+    "any"
+  ],
+  "hooks": false,
+  "min_core": "1.2.3"
+}
